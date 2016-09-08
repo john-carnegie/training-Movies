@@ -1,0 +1,44 @@
+<?php
+//implements hook_menu()
+function menumagic_menu(){
+    $items = array();
+
+    $items['magic']=array(
+        'title'=> 'A little magic',
+        'page callback'=> 'menumagic_basic',
+        'access callback' => 'user_access',
+        'access arguments'=> array('access content'),
+    );
+
+    $items['magic/%']=array(
+        'title'=> 'A little more magic',
+        'page callback'=> 'menumagic_extra',
+        'page arguments' => array(1),
+        'access callback' => 'user_access',
+        'access arguments'=> array('access content'),
+        'file' => 'menumagic.extra.inc',
+    );
+
+    $items['user/%/magic']=array(
+        'title'=> 'Magic',
+        'description'=> 'Magical magic for users',
+        'page callback' => 'menumagic_user_tab',
+        'page arguments' => array(1),
+        'access callback'=> 'user_access',
+        'access arguments' => array('administer users'),
+        'file' => 'menumagic.user.inc',
+        'type' => MENU_LOCAL_TASK,
+    );
+
+
+        return $items;
+}
+
+function menumagic_basic(){
+    $content['raw_markup'] = array(
+        '#type' => 'markup',
+        '#markup' => '<p> Magical menus and stuff </p>',
+
+    );
+    return $content;
+}

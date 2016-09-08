@@ -1,0 +1,205 @@
+<?php
+/*
+ * implements hook_node_view
+ */
+function review_links_node_view($node, $view_mode, $langcode){
+
+    if ($node->type == "movie_review" && $view_mode =='full') {
+        $review_links = array();
+        foreach ($node->field_movie_review_genre as $key => $value) {
+            foreach ($value as $k => $term) {
+                $taxonomy_term = taxonomy_term_load($term['tid']);
+                $review_links[] = l($taxonomy_term->name, 'reviews/'  . $taxonomy_term->name);
+            }
+        }
+
+        $node->content['genre_links'] = array(
+            '#markup' => theme('item_list', array('items' => $review_links, 'title' => NULL, 'attributes' => array('class' => 'genre-taxonomy-list'))),
+            '#weight' => -20,
+        );
+
+
+    }
+}
+
+//implements hook_menu
+function review_links_menu() {
+    $items = array();
+
+    $items['admin-review'] = array(
+        'title' => 'Review Admin Page', //page title
+        'description' => 'For configuring review links module.',
+        'page callback' => 'drupal_get_form', //this is the function that will be called when the page is accessed.  for a form, use drupal_get_form
+        'page arguments' => array('review_links_admin_form'), //put the name of the form here
+        'file'=>'review_links.extra.inc',
+        'access arguments' => array('access review_links content'),
+        //'access callback' => TRUE
+    );
+
+    $items['test/form-review'] = array(
+        'title' => 'Review Form', //page title
+        'description' => 'A form.',
+        'page callback' => 'drupal_get_form', //this is the function that will be called when the page is accessed.  for a form, use drupal_get_form
+        'page arguments' => array('review_links_form'), //put the name of the form here
+        'access arguments' => array('access review_links content'),
+        //'access callback' => TRUE
+    );
+
+    return $items;
+}
+
+//implements hook_form
+
+function review_links_form(){
+
+    $form['Title'] = array(
+        '#type' => 'textfield', //you can find a list of available types in the form api
+        '#title' => t('Title'),
+        '#size' => 50,
+        '#maxlength' => 50,
+        '#required' => TRUE, //make this field required
+    );
+
+    $form['submit'] = array('#type' => 'submit', '#value' => t('Search'));
+    return $form;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function review_links_permission(){
+    return array(
+        'access review_links content' => array(
+            'title' => t('Access the add movies section'),
+            'description'=>t('Add new movies and reviews'),
+        )
+    );
+}
+
+function review_links_form_validate($form, &$form_state){
+    // Validation goes here
+    $check = review_links_check_node($form['Title']['#value']);
+    $film = review_links_check_api($form['Title']['#value']);
+    $error = "Error";
+    if (!empty ($film)) {
+        if (array_key_exists($error, $film)) {
+            form_set_error('Title', "Movie not found");
+        }
+        if (!empty($check)) {
+            form_set_error('Title', "Movie already in database");
+        }
+        $form_state['film_details'] = array($film);
+    }
+    else{
+        form_set_error('Title', "error: film data missing");
+    }
+}
+
+function review_links_form_submit($form, &$form_state) {
+    $film = $form_state['film_details']['0'];
+    $node = new stdClass();
+    $node->title = $form_state['film_details']['0']['Title'];
+    $node->type =  "movie_review";
+    $node->field_movie_review_image[LANGUAGE_NONE][0]['value'] = $film['Poster'];
+    $plot= substr($film['Plot'],0,250).'...';
+    $node->field_movie_review_plot[LANGUAGE_NONE][0]['value'] = $plot;
+    $node->field_movie_review_movie_author[LANGUAGE_NONE][0]['value'] = $film['Director'];
+    $node->field_movie_review_imdb_link[LANGUAGE_NONE][0]['value'] = $film['imdbID'];
+    $node->field_movie_review_review[LANGUAGE_NONE][0]['value'] = "Very good";
+    $terms = review_links_terms($film['Genre']);
+
+
+    if (!empty($terms)) {
+        $terms=(array_filter($terms, function($value) { return $value !== ''; }));
+        foreach ($terms as $value){
+            $node->field_movie_review_genre[LANGUAGE_NONE][]['tid'] = $value;
+        }
+
+    }
+
+    //Get the poster
+    $url = $film['Poster'];
+    $directory = file_build_uri('Posters');
+    if (!file_prepare_directory($directory, FILE_CREATE_DIRECTORY)) {
+        // If our directory doesn't exist and can't be created, use the default.
+        $directory = NULL;
+    }
+    $file = system_retrieve_file($url, $directory, TRUE);
+    if (!empty($file->fid)) {
+        $file_array = array('fid' => $file->fid,
+            'display' => 1,
+            'description' => '',);
+        $node->field_movie_review_image[LANGUAGE_NONE][] = $file_array;
+    }
+    node_object_prepare($node);
+    $node = node_submit($node); // Prepare node for saving
+    node_save($node);
+    drupal_set_message( "Node with nid " . $node->nid . " saved!\n");
+    $form_state['redirect']  = '/reviews';
+}
+
+function review_links_check_node($title){
+    $type = "movie_review";
+    $result = db_query("SELECT n.nid FROM {node} n WHERE n.title = :title AND n.type = :type", array(":title"=> $title, ":type"=> $type));
+    $nid = $result->fetchField();
+    return($nid);
+}
+
+function review_links_check_api($val){
+    //change white space to + for use in the url
+    $url = variable_get('api_url');
+    $val = str_replace(' ', '+', $val);;
+    $url= "$url". "$val";
+    $response = drupal_http_request($url);
+    $out = drupal_json_decode($response->data);
+    return ($out);
+}
+
+function review_links_terms($terms) {
+    $term_array = array (str_getcsv($terms));
+    foreach ($term_array['0'] as $value) {
+        $value = str_replace(' ', '', $value);
+        $tax = review_links_get_term_from_name($value,'genre');
+        if (empty($tax)){
+            if (!empty($value)) {
+                dsm("create new taxonomy term " . $value);
+                $vocab = taxonomy_vocabulary_machine_name_load('genre');
+                $term = (object)array(
+                    'name' => $value,
+                    'vid' => $vocab->vid,
+                );
+                taxonomy_term_save($term);
+                $output_array[] = $term->tid;
+            }
+        }
+        else{
+            $output_array[]= $tax;
+        }
+
+
+    }
+    return($output_array);
+}
+
+function review_links_get_term_from_name($term_name, $vocabulary_name) {
+    if ($vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary_name)) {
+        $tree = taxonomy_get_tree($vocabulary->vid);
+        foreach ($tree as $term) {
+            if ($term->name == $term_name) {
+                return $term->tid;
+            }
+        }
+    }
+
+    return FALSE;
+}
+
+/**
+ * Implements hook_install().
+ */
+function review_links_install()
+{
+
+
+}
+

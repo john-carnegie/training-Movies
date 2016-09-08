@@ -1,0 +1,33 @@
+<?php
+//test
+//hook_permission()
+/**
+ * Implements hook_permission().
+ */
+function test_permission()
+{
+ return array(
+    'administer test module' => array(
+        'title'=> t('Administer test module'),
+        'description'=>t('test description'),
+    )
+ );
+}
+
+//Implements hook_node_view
+
+function test_node_view($node,$view_mode,$langcode){
+    $node->content['test_field'] = array(
+        '#type'=>'markup',
+        '#markup'=>'<p>'.t('Don`t Panic. Its '. date("l")).'</p>',
+        '#weight'=> -10,
+    );
+    $node->content['test_list']= array(
+        '#items' => array('Remain calm','This is only a test','Don`t panic'),
+        '#theme' => 'item_list',
+        '#weight' => -9,
+    );
+    //for testing
+    //krumo($node);
+
+}
