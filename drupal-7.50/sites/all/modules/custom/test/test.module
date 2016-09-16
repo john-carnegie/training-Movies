@@ -22,12 +22,4 @@ function test_node_view($node,$view_mode,$langcode){
         '#markup'=>'<p>'.t('Don`t Panic. Its '. date("l")).'</p>',
         '#weight'=> -10,
     );
-    $node->content['test_list']= array(
-        '#items' => array('Remain calm','This is only a test','Don`t panic'),
-        '#theme' => 'item_list',
-        '#weight' => -9,
-    );
-    //for testing
-    //krumo($node);
-
 }

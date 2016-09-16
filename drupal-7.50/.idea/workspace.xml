@@ -27,64 +27,63 @@
       <file leaf-file-name="review_links.module" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.module">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+            <state relative-caret-position="969">
+              <caret line="115" column="56" selection-start-line="115" selection-start-column="56" selection-end-line="115" selection-end-column="56" />
               <folding>
+                <element signature="e#43#78#0#PHP" expanded="false" />
                 <element signature="n#review_links_node_view#0;n#!!top" expanded="false" />
                 <element signature="n#review_links_form#0;n#!!top" expanded="false" />
-                <element signature="e#2294#2334#0#PHP" expanded="false" />
+                <element signature="e#2845#2885#0#PHP" expanded="false" />
+                <element signature="n#review_links_permission#0;n#!!top" expanded="false" />
                 <element signature="n#review_links_form_validate#0;n#!!top" expanded="false" />
                 <element signature="n#review_links_form_submit#0;n#!!top" expanded="false" />
                 <element signature="n#review_links_check_node#0;n#!!top" expanded="false" />
                 <element signature="n#review_links_check_api#0;n#!!top" expanded="false" />
                 <element signature="n#review_links_terms#0;n#!!top" expanded="false" />
                 <element signature="n#review_links_get_term_from_name#0;n#!!top" expanded="false" />
-                <element signature="e#6672#6709#0#PHP" expanded="false" />
+                <element signature="e#7334#7371#0#PHP" expanded="false" />
                 <element signature="n#review_links_install#0;n#!!top" expanded="false" />
-                <marker date="1473341641204" expanded="true" signature="5046:5114" ph="SELECT n.nid... " />
+                <element signature="e#7411#7451#0#PHP" expanded="false" />
+                <element signature="n#review_links_form_alter#0;n#!!top" expanded="false" />
+                <element signature="n#review_links_user_submit#0;n#!!top" expanded="false" />
+                <element signature="n#select_all_movies#0;n#!!top" expanded="false" />
+                <element signature="n#review_links_user_update#0;n#!!top" expanded="false" />
+                <element signature="e#10111#10151#0#PHP" expanded="false" />
+                <element signature="n#review_links_block_info#0;n#!!top" expanded="false" />
+                <element signature="e#10297#10337#0#PHP" expanded="false" />
+                <element signature="n#review_links_block_view#0;n#!!top" expanded="false" />
+                <element signature="n#review_links_block_content#0;n#!!top" expanded="false" />
+                <marker date="1474014749060" expanded="true" signature="5708:5776" ph="SELECT n.nid... " />
+                <marker date="1474014749060" expanded="true" signature="7614:7679" ph="SELECT favor... " />
+                <marker date="1474014749060" expanded="true" signature="9451:9513" ph="SELECT title... " />
+                <marker date="1474014749060" expanded="true" signature="10770:10821" ph="SELECT genre... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.module" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/test/test.module">
+      <file leaf-file-name="review_links.render.inc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.render.inc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="review_links.extra.inc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.extra.inc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="30" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="review_links.drush.inc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.drush.inc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+            <state relative-caret-position="17">
+              <caret line="86" column="6" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="6" />
               <folding>
-                <element signature="e#6#34#0#PHP" expanded="true" />
+                <element signature="e#6#58#0#PHP" expanded="true" />
+                <element signature="e#2770#2805#0#PHP" expanded="false" />
+                <marker date="1473869572917" expanded="true" signature="213:278" ph="SELECT favor... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deletemovies.drush.inc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/deletemovies.drush.inc">
+      <file leaf-file-name="review_links_item.tpl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links_item.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="170">
+              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+              <folding>
+                <element signature="e#6#48#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,11 +104,15 @@
         <option value="$PROJECT_DIR$/sites/all/modules/custom/menumagic/menumagic.extra.inc" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/menumagic/menumagic.module" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/menumagic/menumagic.user.inc" />
-        <option value="$PROJECT_DIR$/sites/all/modules/custom/test/test.module" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/review_links/deleteall.drush.inc" />
-        <option value="$PROJECT_DIR$/sites/all/modules/custom/review_links/deletemovies.drush.inc" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.extra.inc" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.drush.inc" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/review_links/deletemovies.drush.inc" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.install" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/test/test.module" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/review_links/films.js" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links_item.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.render.inc" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.module" />
       </list>
     </option>
@@ -127,10 +130,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="width" value="1370" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -246,15 +248,22 @@
       <workItem from="1473161230149" duration="14438000" />
       <workItem from="1473235418330" duration="21733000" />
       <workItem from="1473269360484" duration="13000" />
-      <workItem from="1473321557932" duration="14878000" />
+      <workItem from="1473321557932" duration="15381000" />
+      <workItem from="1473408839159" duration="22043000" />
+      <workItem from="1473667117143" duration="22144000" />
+      <workItem from="1473753719765" duration="18586000" />
+      <workItem from="1473840304907" duration="21282000" />
+      <workItem from="1473926165358" duration="792000" />
+      <workItem from="1473933368439" duration="2308000" />
+      <workItem from="1474013384898" duration="2767000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140625000" />
+    <option name="totallyTimeSpent" value="231050000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="0" width="1370" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -289,70 +298,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.module">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1819">
-          <caret line="107" column="29" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="29" />
-          <folding>
-            <element signature="n#review_links_node_view#0;n#!!top" expanded="false" />
-            <element signature="n#review_links_form#0;n#!!top" expanded="false" />
-            <element signature="e#2294#2334#0#PHP" expanded="false" />
-            <element signature="n#review_links_form_validate#0;n#!!top" expanded="false" />
-            <element signature="n#review_links_form_submit#0;n#!!top" expanded="false" />
-            <element signature="n#review_links_check_node#0;n#!!top" expanded="false" />
-            <element signature="n#review_links_check_api#0;n#!!top" expanded="false" />
-            <element signature="n#review_links_terms#0;n#!!top" expanded="false" />
-            <element signature="n#review_links_get_term_from_name#0;n#!!top" expanded="false" />
-            <element signature="e#6672#6709#0#PHP" expanded="false" />
-            <element signature="n#review_links_install#0;n#!!top" expanded="false" />
-            <marker date="1473341641204" expanded="true" signature="5046:5114" ph="SELECT n.nid... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.drush.inc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#34#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.module">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1819">
-          <caret line="107" column="29" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="29" />
-          <folding>
-            <element signature="n#review_links_node_view#0;n#!!top" expanded="false" />
-            <element signature="n#review_links_form#0;n#!!top" expanded="false" />
-            <element signature="e#2294#2334#0#PHP" expanded="false" />
-            <element signature="n#review_links_form_validate#0;n#!!top" expanded="false" />
-            <element signature="n#review_links_form_submit#0;n#!!top" expanded="false" />
-            <element signature="n#review_links_check_node#0;n#!!top" expanded="false" />
-            <element signature="n#review_links_check_api#0;n#!!top" expanded="false" />
-            <element signature="n#review_links_terms#0;n#!!top" expanded="false" />
-            <element signature="n#review_links_get_term_from_name#0;n#!!top" expanded="false" />
-            <element signature="e#6672#6709#0#PHP" expanded="false" />
-            <element signature="n#review_links_install#0;n#!!top" expanded="false" />
-            <marker date="1473341641204" expanded="true" signature="5046:5114" ph="SELECT n.nid... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.drush.inc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#34#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -361,18 +315,33 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#43#78#0#PHP" expanded="false" />
             <element signature="n#review_links_node_view#0;n#!!top" expanded="false" />
             <element signature="n#review_links_form#0;n#!!top" expanded="false" />
-            <element signature="e#2294#2334#0#PHP" expanded="false" />
+            <element signature="e#2845#2885#0#PHP" expanded="false" />
+            <element signature="n#review_links_permission#0;n#!!top" expanded="false" />
             <element signature="n#review_links_form_validate#0;n#!!top" expanded="false" />
             <element signature="n#review_links_form_submit#0;n#!!top" expanded="false" />
             <element signature="n#review_links_check_node#0;n#!!top" expanded="false" />
             <element signature="n#review_links_check_api#0;n#!!top" expanded="false" />
             <element signature="n#review_links_terms#0;n#!!top" expanded="false" />
             <element signature="n#review_links_get_term_from_name#0;n#!!top" expanded="false" />
-            <element signature="e#6672#6709#0#PHP" expanded="false" />
+            <element signature="e#7334#7371#0#PHP" expanded="false" />
             <element signature="n#review_links_install#0;n#!!top" expanded="false" />
-            <marker date="1473341641204" expanded="true" signature="5046:5114" ph="SELECT n.nid... " />
+            <element signature="e#7411#7451#0#PHP" expanded="false" />
+            <element signature="n#review_links_form_alter#0;n#!!top" expanded="false" />
+            <element signature="n#review_links_user_submit#0;n#!!top" expanded="false" />
+            <element signature="n#select_all_movies#0;n#!!top" expanded="false" />
+            <element signature="n#review_links_user_update#0;n#!!top" expanded="false" />
+            <element signature="e#10111#10151#0#PHP" expanded="false" />
+            <element signature="n#review_links_block_info#0;n#!!top" expanded="false" />
+            <element signature="e#10297#10337#0#PHP" expanded="false" />
+            <element signature="n#review_links_block_view#0;n#!!top" expanded="false" />
+            <element signature="n#review_links_block_content#0;n#!!top" expanded="false" />
+            <marker date="1474014749060" expanded="true" signature="5708:5776" ph="SELECT n.nid... " />
+            <marker date="1474014749060" expanded="true" signature="7614:7679" ph="SELECT favor... " />
+            <marker date="1474014749060" expanded="true" signature="9451:9513" ph="SELECT title... " />
+            <marker date="1474014749060" expanded="true" signature="10770:10821" ph="SELECT genre... " />
           </folding>
         </state>
       </provider>
@@ -382,18 +351,33 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#43#78#0#PHP" expanded="false" />
             <element signature="n#review_links_node_view#0;n#!!top" expanded="false" />
             <element signature="n#review_links_form#0;n#!!top" expanded="false" />
-            <element signature="e#2294#2334#0#PHP" expanded="false" />
+            <element signature="e#2845#2885#0#PHP" expanded="false" />
+            <element signature="n#review_links_permission#0;n#!!top" expanded="false" />
             <element signature="n#review_links_form_validate#0;n#!!top" expanded="false" />
             <element signature="n#review_links_form_submit#0;n#!!top" expanded="false" />
             <element signature="n#review_links_check_node#0;n#!!top" expanded="false" />
             <element signature="n#review_links_check_api#0;n#!!top" expanded="false" />
             <element signature="n#review_links_terms#0;n#!!top" expanded="false" />
             <element signature="n#review_links_get_term_from_name#0;n#!!top" expanded="false" />
-            <element signature="e#6672#6709#0#PHP" expanded="false" />
+            <element signature="e#7334#7371#0#PHP" expanded="false" />
             <element signature="n#review_links_install#0;n#!!top" expanded="false" />
-            <marker date="1473341641204" expanded="true" signature="5046:5114" ph="SELECT n.nid... " />
+            <element signature="e#7411#7451#0#PHP" expanded="false" />
+            <element signature="n#review_links_form_alter#0;n#!!top" expanded="false" />
+            <element signature="n#review_links_user_submit#0;n#!!top" expanded="false" />
+            <element signature="n#select_all_movies#0;n#!!top" expanded="false" />
+            <element signature="n#review_links_user_update#0;n#!!top" expanded="false" />
+            <element signature="e#10111#10151#0#PHP" expanded="false" />
+            <element signature="n#review_links_block_info#0;n#!!top" expanded="false" />
+            <element signature="e#10297#10337#0#PHP" expanded="false" />
+            <element signature="n#review_links_block_view#0;n#!!top" expanded="false" />
+            <element signature="n#review_links_block_content#0;n#!!top" expanded="false" />
+            <marker date="1474014749060" expanded="true" signature="5708:5776" ph="SELECT n.nid... " />
+            <marker date="1474014749060" expanded="true" signature="7614:7679" ph="SELECT favor... " />
+            <marker date="1474014749060" expanded="true" signature="9451:9513" ph="SELECT title... " />
+            <marker date="1474014749060" expanded="true" signature="10770:10821" ph="SELECT genre... " />
           </folding>
         </state>
       </provider>
@@ -403,18 +387,33 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#43#78#0#PHP" expanded="false" />
             <element signature="n#review_links_node_view#0;n#!!top" expanded="false" />
             <element signature="n#review_links_form#0;n#!!top" expanded="false" />
-            <element signature="e#2294#2334#0#PHP" expanded="false" />
+            <element signature="e#2845#2885#0#PHP" expanded="false" />
+            <element signature="n#review_links_permission#0;n#!!top" expanded="false" />
             <element signature="n#review_links_form_validate#0;n#!!top" expanded="false" />
             <element signature="n#review_links_form_submit#0;n#!!top" expanded="false" />
             <element signature="n#review_links_check_node#0;n#!!top" expanded="false" />
             <element signature="n#review_links_check_api#0;n#!!top" expanded="false" />
             <element signature="n#review_links_terms#0;n#!!top" expanded="false" />
             <element signature="n#review_links_get_term_from_name#0;n#!!top" expanded="false" />
-            <element signature="e#6672#6709#0#PHP" expanded="false" />
+            <element signature="e#7334#7371#0#PHP" expanded="false" />
             <element signature="n#review_links_install#0;n#!!top" expanded="false" />
-            <marker date="1473341641204" expanded="true" signature="5046:5114" ph="SELECT n.nid... " />
+            <element signature="e#7411#7451#0#PHP" expanded="false" />
+            <element signature="n#review_links_form_alter#0;n#!!top" expanded="false" />
+            <element signature="n#review_links_user_submit#0;n#!!top" expanded="false" />
+            <element signature="n#select_all_movies#0;n#!!top" expanded="false" />
+            <element signature="n#review_links_user_update#0;n#!!top" expanded="false" />
+            <element signature="e#10111#10151#0#PHP" expanded="false" />
+            <element signature="n#review_links_block_info#0;n#!!top" expanded="false" />
+            <element signature="e#10297#10337#0#PHP" expanded="false" />
+            <element signature="n#review_links_block_view#0;n#!!top" expanded="false" />
+            <element signature="n#review_links_block_content#0;n#!!top" expanded="false" />
+            <marker date="1474014749060" expanded="true" signature="5708:5776" ph="SELECT n.nid... " />
+            <marker date="1474014749060" expanded="true" signature="7614:7679" ph="SELECT favor... " />
+            <marker date="1474014749060" expanded="true" signature="9451:9513" ph="SELECT title... " />
+            <marker date="1474014749060" expanded="true" signature="10770:10821" ph="SELECT genre... " />
           </folding>
         </state>
       </provider>
@@ -438,18 +437,33 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#43#78#0#PHP" expanded="false" />
             <element signature="n#review_links_node_view#0;n#!!top" expanded="false" />
             <element signature="n#review_links_form#0;n#!!top" expanded="false" />
-            <element signature="e#2294#2334#0#PHP" expanded="false" />
+            <element signature="e#2845#2885#0#PHP" expanded="false" />
+            <element signature="n#review_links_permission#0;n#!!top" expanded="false" />
             <element signature="n#review_links_form_validate#0;n#!!top" expanded="false" />
             <element signature="n#review_links_form_submit#0;n#!!top" expanded="false" />
             <element signature="n#review_links_check_node#0;n#!!top" expanded="false" />
             <element signature="n#review_links_check_api#0;n#!!top" expanded="false" />
             <element signature="n#review_links_terms#0;n#!!top" expanded="false" />
             <element signature="n#review_links_get_term_from_name#0;n#!!top" expanded="false" />
-            <element signature="e#6672#6709#0#PHP" expanded="false" />
+            <element signature="e#7334#7371#0#PHP" expanded="false" />
             <element signature="n#review_links_install#0;n#!!top" expanded="false" />
-            <marker date="1473341641204" expanded="true" signature="5046:5114" ph="SELECT n.nid... " />
+            <element signature="e#7411#7451#0#PHP" expanded="false" />
+            <element signature="n#review_links_form_alter#0;n#!!top" expanded="false" />
+            <element signature="n#review_links_user_submit#0;n#!!top" expanded="false" />
+            <element signature="n#select_all_movies#0;n#!!top" expanded="false" />
+            <element signature="n#review_links_user_update#0;n#!!top" expanded="false" />
+            <element signature="e#10111#10151#0#PHP" expanded="false" />
+            <element signature="n#review_links_block_info#0;n#!!top" expanded="false" />
+            <element signature="e#10297#10337#0#PHP" expanded="false" />
+            <element signature="n#review_links_block_view#0;n#!!top" expanded="false" />
+            <element signature="n#review_links_block_content#0;n#!!top" expanded="false" />
+            <marker date="1474014749060" expanded="true" signature="5708:5776" ph="SELECT n.nid... " />
+            <marker date="1474014749060" expanded="true" signature="7614:7679" ph="SELECT favor... " />
+            <marker date="1474014749060" expanded="true" signature="9451:9513" ph="SELECT title... " />
+            <marker date="1474014749060" expanded="true" signature="10770:10821" ph="SELECT genre... " />
           </folding>
         </state>
       </provider>
@@ -571,13 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/movies/templates/block.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/movies/templates/views-view.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -613,13 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/menumagic/menumagic.extra.inc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="75" selection-start-line="4" selection-start-column="75" selection-end-line="4" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/test/test.info">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -634,19 +634,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/menumagic/menumagic.module">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/deleteall.drush.inc" />
     <entry file="file://$PROJECT_DIR$/modules/user/user-rtl.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="7" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -654,63 +646,133 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="8" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="8" />
-          <folding>
-            <marker date="1471448854039" expanded="true" signature="569:621" ph="SELECT uid, " />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/deletemovies.drush.inc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="348">
+          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/user/user.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.install">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.drush.inc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="53">
           <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding>
-            <element signature="e#6#34#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.extra.inc">
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/menumagic/menumagic.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="51" />
-          <folding />
+        <state relative-caret-position="163">
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/menumagic/menumagic.extra.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/test/test.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="408">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.extra.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/films.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/movies/templates/block.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.render.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="86" column="6" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="6" />
+          <folding>
+            <element signature="e#6#58#0#PHP" expanded="true" />
+            <element signature="e#2770#2805#0#PHP" expanded="false" />
+            <marker date="1473869572917" expanded="true" signature="213:278" ph="SELECT favor... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links_item.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding>
+            <element signature="e#6#48#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/review_links/review_links.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+        <state relative-caret-position="969">
+          <caret line="115" column="56" selection-start-line="115" selection-start-column="56" selection-end-line="115" selection-end-column="56" />
           <folding>
+            <element signature="e#43#78#0#PHP" expanded="false" />
             <element signature="n#review_links_node_view#0;n#!!top" expanded="false" />
             <element signature="n#review_links_form#0;n#!!top" expanded="false" />
-            <element signature="e#2294#2334#0#PHP" expanded="false" />
+            <element signature="e#2845#2885#0#PHP" expanded="false" />
+            <element signature="n#review_links_permission#0;n#!!top" expanded="false" />
             <element signature="n#review_links_form_validate#0;n#!!top" expanded="false" />
             <element signature="n#review_links_form_submit#0;n#!!top" expanded="false" />
             <element signature="n#review_links_check_node#0;n#!!top" expanded="false" />
             <element signature="n#review_links_check_api#0;n#!!top" expanded="false" />
             <element signature="n#review_links_terms#0;n#!!top" expanded="false" />
             <element signature="n#review_links_get_term_from_name#0;n#!!top" expanded="false" />
-            <element signature="e#6672#6709#0#PHP" expanded="false" />
+            <element signature="e#7334#7371#0#PHP" expanded="false" />
             <element signature="n#review_links_install#0;n#!!top" expanded="false" />
-            <marker date="1473341641204" expanded="true" signature="5046:5114" ph="SELECT n.nid... " />
+            <element signature="e#7411#7451#0#PHP" expanded="false" />
+            <element signature="n#review_links_form_alter#0;n#!!top" expanded="false" />
+            <element signature="n#review_links_user_submit#0;n#!!top" expanded="false" />
+            <element signature="n#select_all_movies#0;n#!!top" expanded="false" />
+            <element signature="n#review_links_user_update#0;n#!!top" expanded="false" />
+            <element signature="e#10111#10151#0#PHP" expanded="false" />
+            <element signature="n#review_links_block_info#0;n#!!top" expanded="false" />
+            <element signature="e#10297#10337#0#PHP" expanded="false" />
+            <element signature="n#review_links_block_view#0;n#!!top" expanded="false" />
+            <element signature="n#review_links_block_content#0;n#!!top" expanded="false" />
+            <marker date="1474014749060" expanded="true" signature="5708:5776" ph="SELECT n.nid... " />
+            <marker date="1474014749060" expanded="true" signature="7614:7679" ph="SELECT favor... " />
+            <marker date="1474014749060" expanded="true" signature="9451:9513" ph="SELECT title... " />
+            <marker date="1474014749060" expanded="true" signature="10770:10821" ph="SELECT genre... " />
           </folding>
         </state>
       </provider>

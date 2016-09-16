@@ -1,4 +1,5 @@
 <?php
+include ('review_links.render.inc');
 /*
  * implements hook_node_view
  */
@@ -25,6 +26,8 @@ function review_links_node_view($node, $view_mode, $langcode){
 //implements hook_menu
 function review_links_menu() {
     $items = array();
+    global $user;
+    $name=$user->name;
 
     $items['admin-review'] = array(
         'title' => 'Review Admin Page', //page title
@@ -45,11 +48,26 @@ function review_links_menu() {
         //'access callback' => TRUE
     );
 
+    $items['movies/autocomplete']= array(
+        'title' => t('AutoComp Menu'),
+        'page callback' => 'select_all_movies',
+        'access arguments' => array('access content'),
+        'type' => MENU_CALLBACK,
+    );
+
+    $items['moviepreferences']=array(
+        'title'=> $name . t(' Movie Preferences'),
+        'file'=>'review_links.render.inc',
+        'page callback' => 'review_links_renderer',
+        'access arguments' => array('access content'),
+
+    );
+
+
     return $items;
 }
 
 //implements hook_form
-
 function review_links_form(){
 
     $form['Title'] = array(
@@ -119,24 +137,31 @@ function review_links_form_submit($form, &$form_state) {
 
     //Get the poster
     $url = $film['Poster'];
-    $directory = file_build_uri('Posters');
-    if (!file_prepare_directory($directory, FILE_CREATE_DIRECTORY)) {
-        // If our directory doesn't exist and can't be created, use the default.
-        $directory = NULL;
+
+    if ($url != "N/A"){
+        $directory = file_build_uri('Posters');
+        if (!file_prepare_directory($directory, FILE_CREATE_DIRECTORY)) {
+            // If our directory doesn't exist and can't be created, use the default.
+            $directory = NULL;
+        }
+
+
+        $file = system_retrieve_file($url, $directory, TRUE);
+
+        if (!empty($file->fid)) {
+            $file_array = array('fid' => $file->fid,
+                'display' => 1,
+                'description' => '',);
+            $node->field_movie_review_image[LANGUAGE_NONE][] = $file_array;
+
+        }
+        }
+        node_object_prepare($node);
+        $node = node_submit($node); // Prepare node for saving
+        node_save($node);
+        drupal_set_message( "Node with nid " . $node->nid . " saved!\n");
+        $form_state['redirect']  = '/reviews';
     }
-    $file = system_retrieve_file($url, $directory, TRUE);
-    if (!empty($file->fid)) {
-        $file_array = array('fid' => $file->fid,
-            'display' => 1,
-            'description' => '',);
-        $node->field_movie_review_image[LANGUAGE_NONE][] = $file_array;
-    }
-    node_object_prepare($node);
-    $node = node_submit($node); // Prepare node for saving
-    node_save($node);
-    drupal_set_message( "Node with nid " . $node->nid . " saved!\n");
-    $form_state['redirect']  = '/reviews';
-}
 
 function review_links_check_node($title){
     $type = "movie_review";
@@ -202,4 +227,148 @@ function review_links_install()
 
 
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function review_links_form_alter(&$form, &$form_state, $form_id)
+{
+    if ($form_id == 'user_profile_form') {
+
+        global $user;
+        $result =  db_query('SELECT favorite_film, genres FROM {user_films} n WHERE uid = :uid', array(':uid' => $user->uid));
+        foreach ($result as $record) {
+            $fav_genres = unserialize($record->genres);
+            $film= $record->favorite_film;
+        }
+
+        $form['movie'] = array(
+            '#type' => 'textfield', //you can find a list of available types in the form api
+            '#title' => t('Favorite Movie'),
+            '#size' => 100,
+            '#maxlength' => 254,
+            '#required' => FALSE,
+            '#autocomplete_path' => 'movies/autocomplete',// custom
+            //'#autocomplete_path' => 'entity-autocomplete/node' uses pre built module
+            '#default_value' => $film,
+        );
+
+        $vid = taxonomy_vocabulary_machine_name_load('genre');
+        $genres = taxonomy_get_tree($vid->vid);
+
+
+
+        foreach($genres as $item ) {
+            $key = $item->tid;
+            $value = $item->name;
+            $options[$key] = $value;
+        }
+
+        $form['genres'] = array(
+            '#type' => 'checkboxes', //you can find a list of available types in the form api
+            '#title' => t('Favorite genres'),
+            '#options'=> $options,
+            '#required' => FALSE,
+            '#default_value' => $fav_genres,
+        );
+
+        $form['#submit'][1] = 'review_links_user_submit';
+    }
+}
+
+function review_links_user_submit($form,&$form_state){
+    drupal_set_message("review links saving");
+    //no longer used. For creating new user movie tables
+    $genre_serial= serialize($form_state['values']['genres']);
+    /*
+    db_insert('user_films')
+    ->fields(array(
+        'uid' => $form['#user']->uid,
+        'favorite_film' => $form['movie']['#value'],
+        'genres' => $genre_serial
+    ))->execute();
+*/
+}
+
+function select_all_movies($string) {
+    $result = db_query("SELECT title FROM {node} WHERE title LIKE '%$string%' LIMIT 10");
+    $matches = array();
+    foreach($result as $item) {
+        $matches[$item->title] = check_plain($item->title);
+    }
+    drupal_json_output($matches);
+    exit;
+}
+
+/**
+ * Implements hook_user_update().
+ */
+function review_links_user_update(&$edit, $account, $category)
+{
+    global $user;
+    $genre_serial= serialize($edit['genres']);
+    $test = unserialize($genre_serial);
+    $result = db_update('user_films')
+        ->fields(array(
+        'favorite_film' => $edit['movie'],
+        'genres' => $genre_serial,
+        ))
+        ->condition('uid',$user->uid)
+        ->execute();
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function review_links_block_info()
+{
+    $blocks['suggestions'] = array(
+        'info' => t('Suggested Movies'),
+    );
+    return($blocks);
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function review_links_block_view($delta = '')
+{
+    $block = array();
+
+    switch ($delta) {
+        case 'suggestions':
+            $block['subject'] = 'movies';
+            $block['content'] = review_links_block_content();
+            break;
+    }
+    return $block;
+
+}
+
+
+function review_links_block_content(){
+    drupal_add_js(drupal_get_path('module', 'review_links') . '/films.js');
+    global $user;
+    $result =  db_query('SELECT  genres FROM {user_films} n WHERE uid = :uid', array(':uid' => $user->uid));
+    foreach ($result as $record) {
+        $fav_genres = $record->genres;
+    }
+    $content[] = array(
+        '#type' => 'markup',
+        '#prefix' => '<div class="suggested-films">',
+        '#markup' => review_links_suggest_movies($fav_genres),
+        '#suffix' => '<input type="button" class="suggest-more-button" value="' . t('Suggest More') . '"/>',
+    );
+
+    $content['ajax_js_file']['#attached']['js'][drupal_get_path('module', 'review_links') . '/films.js'] = array('preprocess' => TRUE);
+
+    $content['ajax_js_settings']['#attached']['js'][] = array(
+        'type' => 'setting',
+        'data' => array(array('review_links' => array('key' => 'value'))
+        ),
+    );
+    return $content;
+}
+
+
 

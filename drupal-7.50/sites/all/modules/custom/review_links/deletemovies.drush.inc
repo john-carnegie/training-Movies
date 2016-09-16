@@ -28,4 +28,11 @@ if (isset($result['node']) && count($result['node'])) {
     node_delete_multiple($node_ids);
 }
 
+//delete taxonomy terms
+    print("Delete!");
+
+    $vocabulary = taxonomy_vocabulary_machine_name_load('genre');
+    foreach (taxonomy_get_tree($vocabulary->vid) as $term) {
+        taxonomy_term_delete($term->tid);
+    }
 }
